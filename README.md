@@ -37,3 +37,6 @@ export const teams: Array<Team> = [
     },
 ```
 Résultat : ![alt text](docs/assets/1.3.2.png)
+
+## 2.1 : Création des types Status, CrewMember et définition des données crewMembers.ts
+
