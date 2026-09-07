@@ -3,7 +3,8 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
-    "dev": "bun run --hot src/index.ts",
+    "dev": "bun run typecheck && bun run --hot src/index.ts",
+    "typecheck": "bun x tsc --noEmit" 
   },
   "private": true,
   "devDependencies": {
