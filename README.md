@@ -40,4 +40,13 @@ Résultat : ![alt text](docs/assets/1.3.2.png)
 
 ## 2.1 : Création des types Status, CrewMember et définition des données crewMembers.ts
 ## 2.2 : Déclaration des fonctions fléchées
-## 2.3 : Recherche de valeurs et affichage en utilisant les fonctions de la partie précédente 
+## 2.3 : Recherche de valeurs et affichage en utilisant les fonctions de la partie précédente
+Contrôle de la partie 2 : 
+- Bon affichage pour Alonzo Church
+- 4 membres sont bien disponibles
+- 3 membres ont bien la compétence 'communication'
+
+Observations de l'exercice 2 : 
+1. filter décrit les propriétés du résultat attendu.
+2. la fonction sert de callback à la fonction filter.
+3. Elles produisent une nouvelle valeur.
