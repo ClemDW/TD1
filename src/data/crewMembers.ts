@@ -22,7 +22,7 @@ export const crewMembers: Array<CrewMember> = [
         teamId: 3,
         status: "disponible",
         role: "Directeur de vol",
-        skills: ["stratégie, communication"]
+        skills: ["stratégie", "communication"]
     },
     {
         id: 4,
