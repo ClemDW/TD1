@@ -5,6 +5,6 @@ export type CrewMember = {
     name: string;
     teamId: number;
     status: Status;
-    role: string;
+    role?: string;
     skills: Array<string>;
 }

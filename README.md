@@ -40,3 +40,4 @@ Résultat : ![alt text](docs/assets/1.3.2.png)
 
 ## 2.1 : Création des types Status, CrewMember et définition des données crewMembers.ts
 ## 2.2 : Déclaration des fonctions fléchées
+## 2.3 : Recherche de valeurs et affichage en utilisant les fonctions de la partie précédente 

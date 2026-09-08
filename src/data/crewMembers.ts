@@ -6,7 +6,6 @@ export const crewMembers: Array<CrewMember> = [
         name: "Alonzo Church",
         teamId: 1,
         status: "disponible",
-        role: "",
         skills: ["navigation, ingénierie"]
     },
     {
@@ -30,7 +29,6 @@ export const crewMembers: Array<CrewMember> = [
         name: "John Backus",
         teamId: 4,
         status: "indisponible",
-        role: "",
         skills: ["communication"]
     },
     {
@@ -46,7 +44,6 @@ export const crewMembers: Array<CrewMember> = [
         name: "Eugenio Moggi",
         teamId: 5,
         status: "en mission",
-        role: "",
         skills: ["recherche"]
     }
 ];
