@@ -62,4 +62,4 @@ Observations de l'exercice 3 :
 
 ## 4.1 Étendre le modèle
 ## 4.2 Ajouter une collaboration à une équipe
-
+## 4.3 Mettre à jour le tableau complet

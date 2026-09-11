@@ -51,7 +51,8 @@ console.table(crewCards);
 // #endregion
 
 // #region Part 4
-import { addPartner } from "./partnerships";
+import { addPartner, updateTeamPartnership } from "./partnerships";
+import type { Team } from "./types/Team";
 
 console.log("\n########## Exercice 4 ##########");
 
@@ -66,10 +67,29 @@ if (originalTeam) {
   console.log("\nÉquipe résultat (après addPartner avec l'id 2) :");
   console.log(updatedTeam);
 
-  console.log("\nVérifications :");
+  console.log("\nVérifications 4.2 :");
   console.log("- Les références sont différentes :", originalTeam !== updatedTeam);
   console.log("- L'équipe d'origine ne possède aucun partenaire :", originalTeam.partners.length === 0);
   console.log("- La nouvelle équipe contient l'identifiant 2 :", updatedTeam.partners.includes(2));
 }
+
+console.log("\n--- 4.3 Mettre à jour le tableau complet ---");
+const withAurorePartnership: Array<Team> = updateTeamPartnership(teams, 1, 2);
+const partnerTeams: Array<Team> = updateTeamPartnership(withAurorePartnership, 2, 1);
+
+console.table(partnerTeams);
+
+const auroreOriginal = teams.find((t) => t.id === 1);
+const horizonOriginal = teams.find((t) => t.id === 2);
+const auroreUpdated = partnerTeams.find((t) => t.id === 1);
+const horizonUpdated = partnerTeams.find((t) => t.id === 2);
+
+console.log("\nVérifications 4.3 :");
+console.log(
+  "- Le tableau initial reste inchangé (toutes les équipes d'origine ont 0 partenaire) :",
+  teams.every((t) => t.partners.length === 0)
+);
+console.log("- Aurore possède le partenaire 2 :", auroreUpdated?.partners.includes(2));
+console.log("- Horizon possède le partenaire 1 :", horizonUpdated?.partners.includes(1));
 
 // #endregion

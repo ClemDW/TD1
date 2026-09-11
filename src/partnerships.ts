@@ -1,6 +1,6 @@
 import type { Team } from "./types/Team";
 
-const addPartner = (team: Team, partnerId: number): Team => {
+export const addPartner = (team: Team, partnerId: number): Team => {
     if (team.partners.includes(partnerId)) {
         return team;
     }
@@ -10,4 +10,13 @@ const addPartner = (team: Team, partnerId: number): Team => {
     };
 };
 
-export { addPartner };
+export const updateTeamPartnership = (
+    allTeams: Array<Team>,
+    teamId: number,
+    partnerId: number
+): Array<Team> => {
+    return allTeams.map((team) =>
+        team.id === teamId ? addPartner(team, partnerId) : team
+    );
+};
+
