@@ -47,6 +47,16 @@ Contrôle de la partie 2 :
 - 3 membres ont bien la compétence 'communication'
 
 Observations de l'exercice 2 : 
-1. filter décrit les propriétés du résultat attendu.
-2. la fonction sert de callback à la fonction filter.
+1. `filter` décrit les propriétés du résultat attendu.
+2. la fonction sert de callback à la fonction `filter`.
 3. Elles produisent une nouvelle valeur.
+
+## 3.1 Fonction `findTeamById`
+## 3.2 Fonction `getTeamName`
+## 3.3 Tranformation des données
+
+Observations de l'exercice 3 : 
+1. Toutes les fonctions de cette partie (`findTeamById`, `getTeamName` et `createCrewCards`) calculent et retournent une valeur.
+2. L'instruction `console.table(crewCards)`, qui produit un effet de bord (effet observable) en affichant les données sur la console.
+3. Oui, ces fonctions sont déterministes : pour des données d'entrée identiques (`teams` et `crewMembers`), elles produisent toujours les mêmes résultats.
+

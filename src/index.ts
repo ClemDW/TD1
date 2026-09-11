@@ -37,3 +37,15 @@ console.log("\n Liste des membres de l'équipage avec leur nom et prénom");
 console.log(crewMembers.map((crewMember) => getDisplayName(crewMember)));
 
 // #endregion
+
+// #region Part 3
+import { createCrewCards } from "./crew";
+import type { CrewCard } from "./types/CrewCard";
+
+console.log("\n########## Exercice 3 ##########");
+
+const crewCards: Array<CrewCard> = createCrewCards(crewMembers);
+
+console.table(crewCards);
+
+// #endregion
