@@ -61,4 +61,5 @@ Observations de l'exercice 3 :
 3. Oui, ces fonctions sont déterministes : pour des données d'entrée identiques (`teams` et `crewMembers`), elles produisent toujours les mêmes résultats.
 
 ## 4.1 Étendre le modèle
+## 4.2 Ajouter une collaboration à une équipe
 
