@@ -6,4 +6,5 @@ export type Team = {
   base: BaseLocation;
   title: string;
   memberCount: number;
+  partners: Array<number>;
 };

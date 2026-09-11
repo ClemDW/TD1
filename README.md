@@ -60,3 +60,5 @@ Observations de l'exercice 3 :
 2. L'instruction `console.table(crewCards)`, qui produit un effet de bord (effet observable) en affichant les données sur la console.
 3. Oui, ces fonctions sont déterministes : pour des données d'entrée identiques (`teams` et `crewMembers`), elles produisent toujours les mêmes résultats.
 
+## 4.1 Étendre le modèle
+
