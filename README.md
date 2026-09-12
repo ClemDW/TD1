@@ -93,7 +93,5 @@ Observations de l'exercice 6 :
 2. `extends { id: number }` est une contrainte générique qui garantit que le type `T` possède obligatoirement au moins une propriété `id` de type `number`, permettant d'accéder à `item.id` sans problème.
 3. Le retour peut être `undefined` car l'élément avec l'identifiant recherché peut être absent du tableau (la méthode `Array.prototype.find()` retourne `undefined` si aucun élément ne correspond au prédicat). TypeScript oblige ainsi à gérer l'absence d'élément.
 
-
-
-
-
+## 6.2 Réutiliser la fonction
+## 6.3 Manipuler le générique

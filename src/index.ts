@@ -130,7 +130,8 @@ console.log(describeMissionState(errorState));
 // #endregion
 
 // #region Part 6
-import { findById } from "./collections";
+import { findById, replaceById } from "./collections";
+import type { CrewMember } from "./types/CrewMember";
 
 console.log("\n########## Exercice 6 ##########");
 console.log("\n--- 6.1 Comprendre la signature ---");
@@ -143,5 +144,64 @@ console.log("Membre d'équipage trouvé par id (2) :", foundMember?.name);
 
 const notFound = findById(teams, 999);
 console.log("Recherche id inexistant (999) :", notFound);
+
+console.log("\n--- 6.2 Réutiliser la fonction ---");
+// 1. Équipe d'identifiant 3
+const team3 = findById(teams, 3);
+if (team3) {
+  // Propriétés propres au type Team : base, memberCount, title
+  console.log(`Équipe 3 : ${team3.name} (Base: ${team3.base}, Membres: ${team3.memberCount}, Devise: « ${team3.title} »)`);
+}
+
+// 2. Membre d'équipage d'identifiant 5
+const member5 = findById(crewMembers, 5);
+if (member5) {
+  // Propriétés propres au type CrewMember : status, role, skills, teamId
+  console.log(`Membre 5 : ${member5.name} (Rôle: ${member5.role}, Statut: ${member5.status}, Compétences: ${member5.skills.join(", ")})`);
+}
+
+// 3. Fiche d'équipage d'identifiant 2
+const card2 = findById(crewCards, 2);
+if (card2) {
+  // Propriétés propres au type CrewCard : teamName, isAvailable, label
+  console.log(`Fiche 2 : ${card2.label} (Équipe: ${card2.teamName}, Disponible: ${card2.isAvailable})`);
+}
+
+console.log("\n--- 6.3 Manipuler le générique ---");
+// Test avec un membre d'équipage
+if (member5) {
+  const modifiedMember5: CrewMember = {
+    ...member5,
+    role: "Commandant principal",
+  };
+  const newCrewList = replaceById(crewMembers, modifiedMember5);
+  const replacedMember = findById(newCrewList, 5);
+  const otherMemberOriginal = crewMembers.find((m) => m.id === 1);
+  const otherMemberNew = newCrewList.find((m) => m.id === 1);
+
+  console.log("Membre 5 après remplacement :", replacedMember?.name, "-", replacedMember?.role);
+  console.log("Vérification membre d'équipage :");
+  console.log("- Nouveau tableau créé :", newCrewList !== crewMembers);
+  console.log("- L'élément cible a bien été remplacé :", replacedMember === modifiedMember5);
+  console.log("- Les autres éléments conservent leur référence :", otherMemberOriginal === otherMemberNew);
+}
+
+// Test avec une équipe
+if (team3) {
+  const modifiedTeam3: Team = {
+    ...team3,
+    memberCount: team3.memberCount + 10,
+  };
+  const newTeamList = replaceById(teams, modifiedTeam3);
+  const replacedTeam = findById(newTeamList, 3);
+  const otherTeamOriginal = teams.find((t) => t.id === 1);
+  const otherTeamNew = newTeamList.find((t) => t.id === 1);
+
+  console.log("\nÉquipe 3 après remplacement :", replacedTeam?.name, "- Membres :", replacedTeam?.memberCount);
+  console.log("Vérification équipe :");
+  console.log("- Nouveau tableau créé :", newTeamList !== teams);
+  console.log("- L'élément cible a bien été remplacé :", replacedTeam === modifiedTeam3);
+  console.log("- Les autres éléments conservent leur référence :", otherTeamOriginal === otherTeamNew);
+}
 
 // #endregion
