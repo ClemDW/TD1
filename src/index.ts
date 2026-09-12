@@ -128,3 +128,20 @@ console.log(describeMissionState(successState));
 console.log(describeMissionState(errorState));
 
 // #endregion
+
+// #region Part 6
+import { findById } from "./collections";
+
+console.log("\n########## Exercice 6 ##########");
+console.log("\n--- 6.1 Comprendre la signature ---");
+
+const foundTeam = findById(teams, 1);
+console.log("Équipe trouvée par id (1) :", foundTeam?.name);
+
+const foundMember = findById(crewMembers, 2);
+console.log("Membre d'équipage trouvé par id (2) :", foundMember?.name);
+
+const notFound = findById(teams, 999);
+console.log("Recherche id inexistant (999) :", notFound);
+
+// #endregion

@@ -86,6 +86,14 @@ Observations de l'exercice 5 :
    - Être en succès sans données (`data` manquant).
    - Être en erreur sans message explicatif (`message` manquant).
 
+## 6.1 Comprendre la signature
+
+Observations de l'exercice 6 :
+1. `T` est un paramètre de type générique (une variable de type) représentant le type des éléments contenus dans le tableau passé en argument (ex. `Team`, `CrewMember`), inféré automatiquement par TypeScript à l'appel.
+2. `extends { id: number }` est une contrainte générique qui garantit que le type `T` possède obligatoirement au moins une propriété `id` de type `number`, permettant d'accéder à `item.id` sans problème.
+3. Le retour peut être `undefined` car l'élément avec l'identifiant recherché peut être absent du tableau (la méthode `Array.prototype.find()` retourne `undefined` si aucun élément ne correspond au prédicat). TypeScript oblige ainsi à gérer l'absence d'élément.
+
+
 
 
 
