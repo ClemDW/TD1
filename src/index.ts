@@ -51,7 +51,7 @@ console.table(crewCards);
 // #endregion
 
 // #region Part 4
-import { addPartner, updateTeamPartnership } from "./partnerships";
+import { addPartner, updateTeamPartnership, removePartner } from "./partnerships";
 import type { Team } from "./types/Team";
 
 console.log("\n########## Exercice 4 ##########");
@@ -91,5 +91,20 @@ console.log(
 );
 console.log("- Aurore possède le partenaire 2 :", auroreUpdated?.partners.includes(2));
 console.log("- Horizon possède le partenaire 1 :", horizonUpdated?.partners.includes(1));
+
+console.log("\n--- 4.4 Supprimer une collaboration ---");
+if (auroreUpdated) {
+  const auroreWithoutPartner = removePartner(auroreUpdated, 2);
+  console.log("Équipe Aurore avant suppression du partenaire :");
+  console.log(auroreUpdated);
+
+  console.log("\nÉquipe résultat après removePartner (retrait du partenaire 2) :");
+  console.log(auroreWithoutPartner);
+
+  console.log("\nVérifications 4.4 :");
+  console.log("- Les références sont différentes :", auroreUpdated !== auroreWithoutPartner);
+  console.log("- Le partenaire 2 a bien été retiré :", !auroreWithoutPartner.partners.includes(2));
+  console.log("- L'objet d'origine n'a pas été muté :", auroreUpdated.partners.includes(2));
+}
 
 // #endregion

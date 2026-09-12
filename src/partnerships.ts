@@ -20,3 +20,10 @@ export const updateTeamPartnership = (
     );
 };
 
+export const removePartner = (team: Team, partnerId: number): Team => {
+    return {
+        ...team,
+        partners: team.partners.filter((id) => id !== partnerId),
+    };
+};
+

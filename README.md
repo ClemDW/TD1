@@ -63,3 +63,11 @@ Observations de l'exercice 3 :
 ## 4.1 Étendre le modèle
 ## 4.2 Ajouter une collaboration à une équipe
 ## 4.3 Mettre à jour le tableau complet
+## 4.4 Supprimer une collaboration
+
+Observations de l'exercice 4 :
+1. En TypeScript, l'opérateur `!==` compare l'égalité par référence en mémoire et non par valeur. `updatedAurore` est une nouvelle instance créée en mémoire (via `{ ...team }`) pour préserver l'immuabilité de l'original, donc leurs adresses mémoires sont distinctes.
+2. Seule l'équipe modifiée (`team.id === teamId`) obtient une nouvelle référence (créée par `addPartner`). Toutes les autres équipes conservent leur référence mémoire d'origine. Le tableau retourné est lui aussi une nouvelle référence générée par `.map()`.
+3. L'absence de mutation permet une comparaison par référence en (`ancienEtat === nouvelEtat`) sans devoir comparer récursivement toutes les propriétés en profondeur. L'ancien état reste également intact et disponible pour l'historique ou la détection de changements.
+4. Cela engendrerait des effets de bord : une modification directe change les données utilisées par l'autre partie sans notification, risquant d'entraîner des corruptions de données, des incohérences d'affichage et des bugs.
+
