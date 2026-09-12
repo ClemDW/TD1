@@ -8,5 +8,9 @@ export const describeMissionState = (state: MissionState): string => {
       return `${state.data.length} membre(s) dans l'équipage`;
     case "error":
       return `Erreur : ${state.message}`;
+    default: {
+      const unreachable: never = state;
+      return unreachable;
+    }
   }
 };

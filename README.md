@@ -75,6 +75,17 @@ Observations de l'exercice 4 :
 
 ## 5.1 Créer une union discriminée
 ## 5.2 Restreindre le type par une condition
+## 5.3 Vérifier tous les cas
+
+Observations de l'exercice 5 :
+1. `describeMissionState` ne réalise aucun chargement (aucun appel asynchrone ni effet de bord). C'est une fonction qui décrit le résultat à produire en fonction de l'état reçu en paramètre.
+2. Séparer les états avec une union discriminée permet d'exprimer des états strictement exclusifs ("rendre les états impossibles impossibles à représenter"). Avec des booléens et des champs optionnels (`isLoading`, `data?`, `error?`).
+3. L'union discriminée rend impossibles les états incohérents suivants :
+   - Être en chargement tout en ayant un message d'erreur (`isLoading: true` et `error: string`).
+   - Être en succès tout en ayant une erreur active.
+   - Être en succès sans données (`data` manquant).
+   - Être en erreur sans message explicatif (`message` manquant).
+
 
 
 
