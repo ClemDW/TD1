@@ -17,6 +17,8 @@ This project was created using `bun init` in bun v1.4.2. [Bun](https://bun.com) 
 
 # Conducteur du TD
 
+Le TD est décomposé avec un commit par exercice et partie, avec mise à jour de ce rapport au fil de l'avancement.
+
 ## 1.1 : Création du type BaseLocation et du type Team
 ## 1.2 : Création des données de teams
 ## 1.3 : Destructuration et affichage de l'objet TS
@@ -72,5 +74,7 @@ Observations de l'exercice 4 :
 4. Cela engendrerait des effets de bord : une modification directe change les données utilisées par l'autre partie sans notification, risquant d'entraîner des corruptions de données, des incohérences d'affichage et des bugs.
 
 ## 5.1 Créer une union discriminée
+## 5.2 Restreindre le type par une condition
+
 
 

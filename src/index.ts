@@ -108,3 +108,23 @@ if (auroreUpdated) {
 }
 
 // #endregion
+
+// #region Part 5
+import { describeMissionState } from "./mission";
+import type { MissionState } from "./types/MissionState";
+
+console.log("\n########## Exercice 5 ##########");
+console.log("\n--- 5.2 Restreindre le type par une condition ---");
+
+const loadingState: MissionState = { status: "loading" };
+const successState: MissionState = { status: "success", data: crewCards };
+const errorState: MissionState = {
+  status: "error",
+  message: "Communication avec la base interrompue",
+};
+
+console.log(describeMissionState(loadingState));
+console.log(describeMissionState(successState));
+console.log(describeMissionState(errorState));
+
+// #endregion
