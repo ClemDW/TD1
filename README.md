@@ -71,3 +71,6 @@ Observations de l'exercice 4 :
 3. L'absence de mutation permet une comparaison par référence en (`ancienEtat === nouvelEtat`) sans devoir comparer récursivement toutes les propriétés en profondeur. L'ancien état reste également intact et disponible pour l'historique ou la détection de changements.
 4. Cela engendrerait des effets de bord : une modification directe change les données utilisées par l'autre partie sans notification, risquant d'entraîner des corruptions de données, des incohérences d'affichage et des bugs.
 
+## 5.1 Créer une union discriminée
+
+
