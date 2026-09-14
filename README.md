@@ -14,6 +14,10 @@ bun run index.ts
 
 This project was created using `bun init` in bun v1.4.2. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
 
+# TD 1
+Clément DE WASCH
+dewasch2u@etu.univ-lorraine.fr
+Groupe 3
 
 # Conducteur du TD
 
